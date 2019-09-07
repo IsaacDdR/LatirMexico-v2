@@ -1,39 +1,178 @@
 import 'package:flutter/material.dart';
 
-class MyScaffold extends StatelessWidget {
-
-  @override
-  Widget build(BuildContext context) {
-    return MaterialApp(
-      title: "El latir",
-      home: Scaffold(
-        appBar: AppBar(
-          title:Text("El Latir"),
-        ),
-        body: Center(
-          child: Column(
-            mainAxisAlignment: MainAxisAlignment.center,
-            children: <Widget> [
-              RaisedButton(
-                child: Text('Hello'),
-                onPressed: null,
-              ),
-              RaisedButton(
-                child: Text('Hello 2'),
-                onPressed: null,
-              ),
-            ],
-          ),
-        ),
-      )
-    );
-  }
-}
 
 
 void main() {
   runApp(MaterialApp(
-    title: 'My app',
-    home: MyScaffold(),
+    title: 'Named Routes Demo',
+    // Start the app with the "/" named route. In this case, the app starts
+    // on the FirstScreen widget.
+    initialRoute: '/',
+    routes: {
+      // When navigating to the "/" route, build the FirstScreen widget.
+      '/': (context) => FirstScreen(),
+      // When navigating to the "/second" route, build the SecondScreen widget.
+      '/usuario': (context) => TabScreen(),
+
+      '/tours': (context) => ToursScreen(),
+
+      '/calendario':(context) => CalendarScreen(),
+    },
   ));
+}
+
+class TabScreen extends StatelessWidget {
+  @override
+  Widget build(BuildContext context) {
+    return MaterialApp(
+      home: DefaultTabController(
+        length: 3,
+        child: Scaffold(
+          appBar: AppBar(
+            bottom: TabBar(
+              tabs: [
+                Tab(icon: Icon(Icons.directions_car)),
+                Tab(icon: Icon(Icons.map)),
+                Tab(icon: Icon(Icons.calendar_view_day)),
+              ],
+            ),
+            title: Text("Titulo"),
+          ),
+          body: TabBarView(
+            children: <Widget> [
+              ListTile(
+                title: Text("Tour"),
+              ),
+              ListTile(
+                title: Text("Tour 2"),
+              ),
+              ListTile(
+                title: Text("Tour 3"),
+              ),
+            ],
+          ),
+        ),
+
+      ),
+
+    );
+  }
+}
+
+class FirstScreen extends StatelessWidget {
+  @override
+  Widget build(BuildContext context) {
+    return Scaffold(
+      appBar: AppBar(
+
+        title: Text('Login'),
+      ),
+      body: Center(
+        child: Row(
+          mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+          children: <Widget>[
+            RaisedButton(
+                padding: EdgeInsets.symmetric(horizontal: 8.0),
+                onPressed: () {
+                  Navigator.pushNamed(context, '/usuario');
+                },
+                child: Text("USUARIO")
+            ),
+            RaisedButton(
+              padding: EdgeInsets.symmetric(horizontal: 8.0),
+              onPressed: () {
+                Navigator.pushNamed(context, '/tours');
+              },
+              child: Text("TOUR"),
+            ),
+          ],
+        ),
+      ),
+    );
+  }
+}
+class UsuarioScreen extends StatelessWidget {
+  @override
+  Widget build(BuildContext context) {
+    return Scaffold(
+      appBar: AppBar(
+        title: Text("Usuario Screen"),
+      ),
+      body: Center(
+        child: Column(
+          mainAxisAlignment: MainAxisAlignment.center,
+          children: <Widget> [
+            RaisedButton(
+              onPressed: () {
+                Navigator.pushNamed(context, '/calendar');
+              },
+              child: Text("CALENDARIO"),
+            ),
+            RaisedButton(
+              onPressed: () {
+                Navigator.pushNamed(context, '/restaurantes');
+              },
+              child: Text("RESTAURANTES"),
+            ),
+            RaisedButton(
+              onPressed: () {
+                Navigator.pushNamed(context, '/tours');
+              },
+              child: Text("TOURS"),
+            ),
+          ],
+        ),
+      ),
+    );
+  }
+}
+
+class CalendarScreen extends StatelessWidget {
+  @override
+  Widget build(BuildContext context) {
+    return Scaffold(
+      appBar: AppBar(
+        title: Text("Calendar"),
+      ),
+      body: Center(
+        child: Row(
+          children: <Widget> [
+            RaisedButton(
+              onPressed: () {
+
+              },
+
+            ),
+          ],
+        ),
+
+      ),
+    );
+  }
+}
+
+class ToursScreen extends StatelessWidget {
+  @override
+  Widget build(BuildContext context) {
+    return Scaffold(
+      appBar: AppBar(
+        title: Text("Tours"),
+      ),
+      body: ListView(
+        children: <Widget>[
+          ListTile(
+            leading: Icon(Icons.photo_album),
+            title: Text("Tour 1"),
+            onTap: () {
+            },
+          ),
+          ListTile(
+            leading: Icon(Icons.photo_album),
+            title: Text("Tour 2"),
+          ),
+        ],
+
+      ),
+    );
+  }
 }
