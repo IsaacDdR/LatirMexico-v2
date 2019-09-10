@@ -31,18 +31,25 @@ class TabScreen extends StatelessWidget {
           appBar: AppBar(
             bottom: TabBar(
               tabs: [
-                Tab(icon: Icon(Icons.directions_car)),
+                Tab(icon: Icon(Icons.directions_bus)),
                 Tab(icon: Icon(Icons.map)),
-                Tab(icon: Icon(Icons.calendar_view_day)),
+                Tab(icon: Icon(Icons.calendar_today)),
               ],
             ),
-            title: Text("Titulo"),
+            title: Text("¿A dónde?"),
           ),
           body: TabBarView(
             children: <Widget> [
               Container(
                 child: Column(
                   children: <Widget> [
+                    Row(
+                      mainAxisAlignment:MainAxisAlignment.center,
+                      children: <Widget> [
+                        
+
+                      ],
+                    ),
                     ListTile(
                       title: Text("Tour 1"),
                     ),
@@ -67,9 +74,7 @@ class TabScreen extends StatelessWidget {
               ListTile(
                 title: Text("Tour 2"),
               ),
-              ListTile(
-                title: Text("Tour 3"),
-              ),
+
             ],
           ),
         ),
