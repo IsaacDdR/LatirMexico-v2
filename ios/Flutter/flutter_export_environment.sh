@@ -1,7 +1,7 @@
 #!/bin/sh
 # This is a generated file; do not edit or check into version control.
 export "FLUTTER_ROOT=/home/capcrunch/flutter"
-export "FLUTTER_APPLICATION_PATH=/home/capcrunch/AndroidStudioProjects/elmv2"
+export "FLUTTER_APPLICATION_PATH=/home/capcrunch/AndroidStudioProjects/LatirMexico-v2"
 export "FLUTTER_TARGET=lib/main.dart"
 export "FLUTTER_BUILD_DIR=build"
 export "SYMROOT=${SOURCE_ROOT}/../build/ios"

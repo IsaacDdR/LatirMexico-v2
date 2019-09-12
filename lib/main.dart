@@ -32,7 +32,7 @@ class TabScreen extends StatelessWidget {
             bottom: TabBar(
               tabs: [
                 Tab(icon: Icon(Icons.directions_bus)),
-                Tab(icon: Icon(Icons.map)),
+                Tab(icon: Icon(Icons.fastfood)),
                 Tab(icon: Icon(Icons.calendar_today)),
               ],
             ),
@@ -46,11 +46,11 @@ class TabScreen extends StatelessWidget {
                     Row(
                       mainAxisAlignment:MainAxisAlignment.center,
                       children: <Widget> [
-                        
 
                       ],
                     ),
                     ListTile(
+
                       title: Text("Tour 1"),
                     ),
                     ListTile(
@@ -72,7 +72,7 @@ class TabScreen extends StatelessWidget {
                 ),
               ),
               ListTile(
-                title: Text("Tour 2"),
+                title: Text("Calendario"),
               ),
 
             ],
