@@ -28,19 +28,21 @@ class MyApp extends StatelessWidget {
 
 class MyStatefulWidget extends StatefulWidget {
   MyStatefulWidget({Key key}) : super(key: key);
-
   @override
   _MyStatefulWidgetState createState() => _MyStatefulWidgetState();
 }
 
 class _MyStatefulWidgetState extends State<MyStatefulWidget> {
   int _selectedIndex = 0;
+  List cards = new List.generate(20, (i)=>new CustomCard());
+
   static const TextStyle optionStyle =
       TextStyle(fontSize: 30, fontWeight: FontWeight.bold);
-  static const List<Widget> _widgetOptions = <Widget>[
-    Text(
-      'Index 0: Home',
-      style: optionStyle,
+  List<Widget> _widgetOptions = <Widget>[
+    Container(
+      child: ListView(
+        children: cards,
+      )
     ),
     Text(
       'Index 1: Business',
@@ -57,6 +59,8 @@ class _MyStatefulWidgetState extends State<MyStatefulWidget> {
       _selectedIndex = index;
     });
   }
+
+
 
   @override
   Widget build(BuildContext context) {
@@ -87,5 +91,42 @@ class _MyStatefulWidgetState extends State<MyStatefulWidget> {
         onTap: _onItemTapped,
       ),
     );
+  }
+}
+
+class CustomCard extends StatelessWidget {
+  @override
+  Widget build(BuildContext context) {
+  return  new Card(
+        child: new Column(
+          children: <Widget>[
+            new Image.network('https://i.ytimg.com/vi/fq4N0hgOWzU/maxresdefault.jpg'),
+            new Padding(
+              padding: new EdgeInsets.all(7.0),
+              child: new Row(
+                children: <Widget>[
+                 new Padding(
+                   padding: new EdgeInsets.all(7.0),
+                   child: new Icon(Icons.thumb_up),
+                 ),
+                 new Padding(
+                   padding: new EdgeInsets.all(7.0),
+                   child: new Text('Like',style: new TextStyle(fontSize: 18.0),),
+                 ),
+                 new Padding(
+                   padding: new EdgeInsets.all(7.0),
+                   child: new Icon(Icons.comment),
+                 ),
+                 new Padding(
+                   padding: new EdgeInsets.all(7.0),
+                   child: new Text('Comments',style: new TextStyle(fontSize: 18.0)),
+                 )
+
+                ],
+              )
+            )
+          ],
+        ),
+      );
   }
 }
