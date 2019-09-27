@@ -8,14 +8,12 @@
 //
 // ![A scaffold with a bottom navigation bar containing three bottom navigation
 // bar items. The first one is selected.](https://flutter.github.io/assets-for-api-docs/assets/material/bottom_navigation_bar.png)
-
 import 'package:flutter/material.dart';
 
 void main() => runApp(MyApp());
 
-/// This Widget is the main application widget.
 class MyApp extends StatelessWidget {
-  static const String _title = 'Flutter Code Sample';
+  static const String _title = 'El latir';
 
   @override
   Widget build(BuildContext context) {
@@ -28,28 +26,26 @@ class MyApp extends StatelessWidget {
 
 class MyStatefulWidget extends StatefulWidget {
   MyStatefulWidget({Key key}) : super(key: key);
+
   @override
   _MyStatefulWidgetState createState() => _MyStatefulWidgetState();
 }
 
 class _MyStatefulWidgetState extends State<MyStatefulWidget> {
   int _selectedIndex = 0;
-  List cards = new List.generate(20, (i)=>new CustomCard());
-
   static const TextStyle optionStyle =
-      TextStyle(fontSize: 30, fontWeight: FontWeight.bold);
-  List<Widget> _widgetOptions = <Widget>[
-    Container(
-      child: ListView(
-        children: cards,
-      )
-    ),
+  TextStyle(fontSize: 30, fontWeight: FontWeight.bold);
+  static const List<Widget> _widgetOptions = <Widget>[
     Text(
-      'Index 1: Business',
+      'Restaurantes',
       style: optionStyle,
     ),
     Text(
-      'Index 2: School',
+      'Tours',
+      style: optionStyle,
+    ),
+    Text(
+      'Calendario',
       style: optionStyle,
     ),
   ];
@@ -60,13 +56,14 @@ class _MyStatefulWidgetState extends State<MyStatefulWidget> {
     });
   }
 
-
-
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: const Text('BottomNavigationBar Sample'),
+        title: const Text('El latir '),
+        actions:<Widget>[
+          Icon(Icons.search),
+        ],
       ),
       body: Center(
         child: _widgetOptions.elementAt(_selectedIndex),
@@ -74,16 +71,16 @@ class _MyStatefulWidgetState extends State<MyStatefulWidget> {
       bottomNavigationBar: BottomNavigationBar(
         items: const <BottomNavigationBarItem>[
           BottomNavigationBarItem(
-            icon: Icon(Icons.home),
-            title: Text('Home'),
+            icon: Icon(Icons.fastfood),
+            title: Text('Comida'),
           ),
           BottomNavigationBarItem(
-            icon: Icon(Icons.business),
-            title: Text('Business'),
+            icon: Icon(Icons.directions_bus),
+            title: Text('Tours'),
           ),
           BottomNavigationBarItem(
-            icon: Icon(Icons.school),
-            title: Text('School'),
+            icon: Icon(Icons.event),
+            title: Text('Eventos'),
           ),
         ],
         currentIndex: _selectedIndex,
@@ -91,42 +88,5 @@ class _MyStatefulWidgetState extends State<MyStatefulWidget> {
         onTap: _onItemTapped,
       ),
     );
-  }
-}
-
-class CustomCard extends StatelessWidget {
-  @override
-  Widget build(BuildContext context) {
-  return  new Card(
-        child: new Column(
-          children: <Widget>[
-            new Image.network('https://i.ytimg.com/vi/fq4N0hgOWzU/maxresdefault.jpg'),
-            new Padding(
-              padding: new EdgeInsets.all(7.0),
-              child: new Row(
-                children: <Widget>[
-                 new Padding(
-                   padding: new EdgeInsets.all(7.0),
-                   child: new Icon(Icons.thumb_up),
-                 ),
-                 new Padding(
-                   padding: new EdgeInsets.all(7.0),
-                   child: new Text('Like',style: new TextStyle(fontSize: 18.0),),
-                 ),
-                 new Padding(
-                   padding: new EdgeInsets.all(7.0),
-                   child: new Icon(Icons.comment),
-                 ),
-                 new Padding(
-                   padding: new EdgeInsets.all(7.0),
-                   child: new Text('Comments',style: new TextStyle(fontSize: 18.0)),
-                 )
-
-                ],
-              )
-            )
-          ],
-        ),
-      );
   }
 }
