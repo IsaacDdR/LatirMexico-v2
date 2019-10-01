@@ -26,18 +26,61 @@ class _MyStatefulWidgetState extends State<MyStatefulWidget> {
   int _selectedIndex = 0;
   static const TextStyle optionStyle =
   TextStyle(fontSize: 30, fontWeight: FontWeight.bold);
-  static const List<Widget> _widgetOptions = <Widget>[
-    Text(
-      'Index 0: Home',
-      style: optionStyle,
+  List<Widget> _widgetOptions = <Widget>[
+    ListView(
+      children: <Widget> [
+        Card(
+          child: InkWell(
+            splashColor: Colors.orange.withAlpha(30),
+            child: Container(
+              width: 300,
+              height: 100,
+              child: Center(
+                child: Text(
+                  "Restaurante",
+                ),
+              ),
+            ),
+          ),
+        ),
+      ],
     ),
-    Text(
-      'Index 1: Business',
-      style: optionStyle,
+    ListView(
+      children: <Widget> [
+        Card(
+          child: InkWell(
+            splashColor: Colors.orange.withAlpha(30),
+            child: Container(
+              width: 300,
+              height: 100,
+              child: Center(
+                child: Text(
+                  'Tours',
+                ),
+              ),
+            ),
+          ),
+        ),
+      ],
     ),
-    Text(
-      'Index 2: School',
-      style: optionStyle,
+    ListView(
+      children: <Widget> [
+        Card(
+          child: InkWell(
+            splashColor: Colors.orange.withAlpha(30),
+            child: Container(
+              height: 300,
+              width: 100,
+              child: Center(
+                child: Text(
+                  "Calendario",
+                ),
+              ),
+            ),
+          ),
+
+        ),
+      ],
     ),
   ];
 
