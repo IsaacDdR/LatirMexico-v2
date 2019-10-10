@@ -33,7 +33,7 @@ class _MyStatefulWidgetState extends State<MyStatefulWidget> {
         Container(
           child: Column(
             children: <Widget> [
-              Text("Uno"),
+              Text("Hoteles"),
             ],
           ),
         ),
@@ -45,7 +45,7 @@ class _MyStatefulWidgetState extends State<MyStatefulWidget> {
         Container(
           child: Column(
             children: <Widget> [
-              Text("Dos"),
+              Text("Tour"),
             ],
           ),
         ),
