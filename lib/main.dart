@@ -30,13 +30,18 @@ class _MyStatefulWidgetState extends State<MyStatefulWidget> {
   List<Widget> _widgetOption = <Widget> [
     ListView(
       children: <Widget> [
-        Container(
-          child: Column(
-            children: <Widget> [
-              Text("Hoteles"),
-            ],
-          ),
-        ),
+	Padding(
+	  padding: EdgeInsets.all(8.0),
+	  child: Card(
+	    child: Column(
+	      children: <Widget> [
+	        Text(
+                  "Hello"
+	      ), //Text
+             ],
+	    ), //Column
+	  ), //Card
+	), //Padding
       ],
     ),
 
@@ -87,15 +92,15 @@ class _MyStatefulWidgetState extends State<MyStatefulWidget> {
         items: <BottomNavigationBarItem> [
           BottomNavigationBarItem(
             icon: Icon(Icons.home),
-            title: Text("Uno"),
+            title: Text("Hotel"),
           ),
           BottomNavigationBarItem(
             icon: Icon(Icons.directions_bus),
-            title: Text("Dos"),
+            title: Text("Tour"),
           ),
           BottomNavigationBarItem(
             icon: Icon(Icons.calendar_view_day),
-            title: Text("Tres")
+            title: Text("Calendario")
           ),
         ],
         currentIndex: _selectedIndex,
