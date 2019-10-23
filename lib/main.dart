@@ -22,28 +22,42 @@ class MyStatefulWidget extends StatefulWidget {
   _MyStatefulWidgetState createState() => _MyStatefulWidgetState();
 }
 
+//Meter boton antros
+
 class _MyStatefulWidgetState extends State<MyStatefulWidget> {
   int _selectedIndex = 0;
 
   static const TextStyle optionStyle = TextStyle(fontSize: 30, fontWeight: FontWeight.bold);
 
   List<Widget> _widgetOption = <Widget> [
-    ListView(
-      children: <Widget> [
-	Padding(
-	  padding: EdgeInsets.all(8.0),
-	  child: Card(
-	    child: Column(
-	      children: <Widget> [
-	        Text(
-                  "Hello"
-	      ), //Text
-             ],
-	    ), //Column
-	  ), //Card
-	), //Padding
-      ],
-    ),
+      Center(
+        child: Card(
+          child: Column(
+            mainAxisSize: MainAxisSize.min,
+            children: <Widget>[
+              const ListTile(
+                leading: Icon(Icons.hotel),
+                title: Text('La pradera'),
+                subtitle: Text('El mejor lugar para disfrutar'),
+              ),
+              ButtonTheme.bar( // make buttons use the appropriate styles for cards
+                child: ButtonBar(
+                  children: <Widget>[
+                    FlatButton(
+                      child: const Text('RESERVAR'),
+                      onPressed: () { /* ... */ },
+                    ),
+                    FlatButton(
+                      child: const Text('UBICACION'),
+                      onPressed: () { /* ... */ },
+                    ),
+                  ],
+                ),
+              ),
+            ],
+          ),
+        ),
+      ),
 
     ListView(
       children: <Widget> [
@@ -83,6 +97,9 @@ class _MyStatefulWidgetState extends State<MyStatefulWidget> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
+        actions: <Widget> [
+          Icon(Icons.calendar_today),
+        ],
         title: Text("El App"),
       ),
       body: Center(
@@ -91,15 +108,15 @@ class _MyStatefulWidgetState extends State<MyStatefulWidget> {
       bottomNavigationBar: BottomNavigationBar(
         items: <BottomNavigationBarItem> [
           BottomNavigationBarItem(
-            icon: Icon(Icons.home),
-            title: Text("Hotel"),
+            icon: Icon(Icons.fastfood),
+            title: Text("Restaurantes"),
           ),
           BottomNavigationBarItem(
             icon: Icon(Icons.directions_bus),
             title: Text("Tour"),
           ),
           BottomNavigationBarItem(
-            icon: Icon(Icons.calendar_view_day),
+            icon: Icon(Icons.calendar_today),
             title: Text("Calendario")
           ),
         ],
