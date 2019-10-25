@@ -30,42 +30,61 @@ class _MyStatefulWidgetState extends State<MyStatefulWidget> {
   static const TextStyle optionStyle = TextStyle(fontSize: 30, fontWeight: FontWeight.bold);
 
   List<Widget> _widgetOption = <Widget> [
-      Center(
-        child: Card(
-          child: Column(
-            mainAxisSize: MainAxisSize.min,
-            children: <Widget>[
-              const ListTile(
-                leading: Icon(Icons.hotel),
-                title: Text('La pradera'),
-                subtitle: Text('El mejor lugar para disfrutar'),
+    Container(
+      child: Card(
+        child: Column(
+          mainAxisSize: MainAxisSize.min,
+          children: <Widget>[
+            const ListTile(
+              leading: Icon(Icons.hotel),
+              title: Text('La pradera'),
+              subtitle: Text('El mejor lugar para disfrutar'),
+            ),
+            ButtonTheme.bar( // make buttons use the appropriate styles for cards
+              child: ButtonBar(
+                children: <Widget>[
+                  FlatButton(
+                    child: const Text('RESERVAR'),
+                    onPressed: () { /* ... */ },
+                  ),
+                  FlatButton(
+                    child: const Text('UBICACION'),
+                    onPressed: () { /* ... */ },
+                  ),
+                ],
               ),
-              ButtonTheme.bar( // make buttons use the appropriate styles for cards
-                child: ButtonBar(
-                  children: <Widget>[
-                    FlatButton(
-                      child: const Text('RESERVAR'),
-                      onPressed: () { /* ... */ },
-                    ),
-                    FlatButton(
-                      child: const Text('UBICACION'),
-                      onPressed: () { /* ... */ },
-                    ),
-                  ],
-                ),
-              ),
-            ],
-          ),
+            ),
+          ],
         ),
       ),
+    ),
 
     ListView(
       children: <Widget> [
         Container(
-          child: Column(
-            children: <Widget> [
-              Text("Tour"),
-            ],
+          child: Card(
+            child: Column (
+              children: <Widget> [
+                const ListTile(
+                  leading: Icon(Icons.hotel),
+                  title: Text("Los guayabos"),
+                ),
+                ButtonTheme.bar(
+                  child: ButtonBar(
+                    children: <Widget> [
+                      FlatButton(
+                        child: const Text("RESERVAR"),
+                        onPressed: () {},
+                      ),
+                      FlatButton(
+                        child: const Text("UBICACION"),
+                        onPressed: () {},
+                      ),
+                    ],
+                  ),
+                ),
+              ],
+            ),
           ),
         ),
       ],
