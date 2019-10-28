@@ -3,7 +3,7 @@ import 'package:flutter/material.dart';
 void main() => runApp(MyApp());
 
 class MyApp extends StatelessWidget {
-  static const String _title = 'El app';
+  static const String _title = 'Titulo';
 
   @override
   Widget build(BuildContext context) {
@@ -116,6 +116,7 @@ class _MyStatefulWidgetState extends State<MyStatefulWidget> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
+        leading: Icon(Icons.search),
         actions: <Widget> [
           Icon(Icons.calendar_today),
         ],
