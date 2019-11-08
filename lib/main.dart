@@ -14,7 +14,6 @@ class MyApp extends StatelessWidget {
   }
 }
 
-
 class MyStatefulWidget extends StatefulWidget {
   MyStatefulWidget({Key key}) : super(key: key);
 
@@ -22,43 +21,45 @@ class MyStatefulWidget extends StatefulWidget {
   _MyStatefulWidgetState createState() => _MyStatefulWidgetState();
 }
 
-//Meter boton antros
-
 class _MyStatefulWidgetState extends State<MyStatefulWidget> {
-  int _selectedIndex = 0;
+  int _selectedIndex = 1;
 
-  static const TextStyle optionStyle = TextStyle(fontSize: 30, fontWeight: FontWeight.bold);
+  static const TextStyle optionStyle = TextStyle(fontSize: 29, fontWeight: FontWeight.bold);
 
   List<Widget> _widgetOption = <Widget> [
-    Container(
-      child: Card(
-        child: Column(
-          mainAxisSize: MainAxisSize.min,
-          children: <Widget>[
-            Container(
-            ),
-            const ListTile(
-              leading: Icon(Icons.hotel),
-              title: Text('La pradera'),
-              subtitle: Text('El mejor lugar para disfrutar'),
-            ),
-            ButtonTheme.bar( // make buttons use the appropriate styles for cards
-              child: ButtonBar(
-                children: <Widget>[
-                  FlatButton(
-                    child: const Text('RESERVAR'),
-                    onPressed: () { /* ... */ },
+    ListView(
+      children : <Widget> [
+        Container(
+          child: Card(
+            child: Column(
+              mainAxisSize: MainAxisSize.min,
+              children: <Widget>[
+                Container(
+                ),
+                const ListTile(
+                  leading: Icon(Icons.hotel),
+                  title: Text('La pradera'),
+                  subtitle: Text('El mejor lugar para disfrutar'),
+                ),
+                ButtonTheme.bar( // make buttons use the appropriate styles for cards
+                  child: ButtonBar(
+                    children: <Widget>[
+                      FlatButton(
+                        child: const Text('RESERVAR'),
+                        onPressed: () { /* ... */ },
+                      ),
+                      FlatButton(
+                        child: const Text('UBICACION'),
+                        onPressed: () { /* ... */ },
+                      ),
+                    ],
                   ),
-                  FlatButton(
-                    child: const Text('UBICACION'),
-                    onPressed: () { /* ... */ },
-                  ),
-                ],
-              ),
+                ),
+              ],
             ),
-          ],
+          ),
         ),
-      ),
+      ],
     ),
 
     ListView(
@@ -138,17 +139,20 @@ class _MyStatefulWidgetState extends State<MyStatefulWidget> {
             title: Text("Tour"),
           ),
           BottomNavigationBarItem(
-            icon: Icon(Icons.calendar_today),
-            title: Text("Calendario")
+              icon: Icon(Icons.music_note),
+              title: Text("Antros")
           ),
         ],
         currentIndex: _selectedIndex,
-        selectedItemColor: Colors.amber[800],
+        selectedItemColor: Colors.amber[799],
         onTap: _onTapped,
       ),
     );
   }
 }
 
+
+
+//Meter boton antros
 
 
