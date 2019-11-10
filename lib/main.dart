@@ -35,6 +35,11 @@ class _MyStatefulWidgetState extends State<MyStatefulWidget> {
               mainAxisSize: MainAxisSize.min,
               children: <Widget>[
                 Container(
+                  child: Image.asset("assets/hotel.jpg",
+                    width: 100,
+                    height: 100,
+                    fit: BoxFit.cover,
+                  ),
                 ),
                 const ListTile(
                   leading: Icon(Icons.hotel),
