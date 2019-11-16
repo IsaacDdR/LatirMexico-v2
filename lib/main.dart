@@ -36,8 +36,6 @@ class _MyStatefulWidgetState extends State<MyStatefulWidget> {
               children: <Widget>[
                 Container(
                   child: Image.asset("assets/hotel.jpg",
-                    width: 100,
-                    height: 100,
                     fit: BoxFit.cover,
                   ),
                 ),
@@ -66,27 +64,35 @@ class _MyStatefulWidgetState extends State<MyStatefulWidget> {
         ),
       ],
     ),
+    
 
     ListView(
-      children: <Widget> [
+      children : <Widget> [
         Container(
           child: Card(
-            child: Column (
-              children: <Widget> [
-                const ListTile(
-                  leading: Icon(Icons.hotel),
-                  title: Text("Los guayabos"),
+            child: Column(
+              mainAxisSize: MainAxisSize.min,
+              children: <Widget>[
+                Container(
+                  child: Image.asset("assets/tour.jpg",
+                    fit: BoxFit.cover,
+                  ),
                 ),
-                ButtonTheme.bar(
+                const ListTile(
+                  leading: Icon(Icons.directions_bus),
+                  title: Text('Los dolidos'),
+                  subtitle: Text('Un recorrido para aquellos dolidos del alma'),
+                ),
+                ButtonTheme.bar( // make buttons use the appropriate styles for cards
                   child: ButtonBar(
-                    children: <Widget> [
+                    children: <Widget>[
                       FlatButton(
-                        child: const Text("RESERVAR"),
-                        onPressed: () {},
+                        child: const Text('RESERVAR'),
+                        onPressed: () { /* ... */ },
                       ),
                       FlatButton(
-                        child: const Text("UBICACION"),
-                        onPressed: () {},
+                        child: const Text('UBICACION'),
+                        onPressed: () { /* ... */ },
                       ),
                     ],
                   ),
@@ -99,16 +105,41 @@ class _MyStatefulWidgetState extends State<MyStatefulWidget> {
     ),
 
     ListView(
-      children: <Widget> [
+      children : <Widget> [
         Container(
-          child: Column(
-            children: <Widget> [
-              Text("ANTROS"),
-            ],
+          child: Card(
+            child: Column(
+              mainAxisSize: MainAxisSize.min,
+              children: <Widget>[
+                Container(
+                  child: Image.asset("assets/antro.jpg",
+                    fit: BoxFit.cover,
+                  ),
+                ),
+                const ListTile(
+                  leading: Icon(Icons.music_note),
+                  title: Text('La waska'),
+                  subtitle: Text('Si no waskeas, pierdes'),
+                ),
+                ButtonTheme.bar( // make buttons use the appropriate styles for cards
+                  child: ButtonBar(
+                    children: <Widget>[
+                      FlatButton(
+                        child: const Text('RESERVAR'),
+                        onPressed: () { /* ... */ },
+                      ),
+                      FlatButton(
+                        child: const Text('UBICACION'),
+                        onPressed: () { /* ... */ },
+                      ),
+                    ],
+                  ),
+                ),
+              ],
+            ),
           ),
         ),
       ],
-
     ),
   ];
 
