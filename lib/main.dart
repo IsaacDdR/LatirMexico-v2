@@ -74,8 +74,16 @@ class _MyStatefulWidgetState extends State<MyStatefulWidget> {
               mainAxisSize: MainAxisSize.min,
               children: <Widget>[
                 Container(
-                  child: Image.asset("assets/tour.jpg",
-                    fit: BoxFit.cover,
+                  width: 100,
+                  height: 100,
+                  decoration: BoxDecoration(
+                    border: Border.all(),
+                    borderRadius: BorderRadius.all(
+                      Radius.circular(20.0),
+                    ),
+                    image: DecorationImage(
+                      image: AssetImage("assets/tour.jpg"),
+                    ),
                   ),
                 ),
                 const ListTile(
