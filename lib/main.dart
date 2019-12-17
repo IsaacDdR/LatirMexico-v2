@@ -44,7 +44,7 @@ class _MyStatefulWidgetState extends State<MyStatefulWidget> {
                   title: Text('La pradera'),
                   subtitle: Text('El mejor lugar para disfrutar'),
                 ),
-                ButtonTheme.bar( // make buttons use the appropriate styles for cards
+                ButtonTheme( // make buttons use the appropriate styles for cards
                   child: ButtonBar(
                     children: <Widget>[
                       FlatButton(
@@ -91,7 +91,7 @@ class _MyStatefulWidgetState extends State<MyStatefulWidget> {
                   title: Text('Los dolidos'),
                   subtitle: Text('Un recorrido para aquellos dolidos del alma'),
                 ),
-                ButtonTheme.bar( // make buttons use the appropriate styles for cards
+                ButtonTheme( // make buttons use the appropriate styles for cards
                   child: ButtonBar(
                     children: <Widget>[
                       FlatButton(
@@ -129,7 +129,7 @@ class _MyStatefulWidgetState extends State<MyStatefulWidget> {
                   title: Text('La waska'),
                   subtitle: Text('Si no waskeas, pierdes'),
                 ),
-                ButtonTheme.bar( // make buttons use the appropriate styles for cards
+                ButtonTheme( // make buttons use the appropriate styles for cards
                   child: ButtonBar(
                     children: <Widget>[
                       FlatButton(
